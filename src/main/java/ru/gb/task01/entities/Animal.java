@@ -2,14 +2,14 @@ package ru.gb.task01.entities;
 
 public abstract class Animal {
     private final String name;
-    private final String sound;
+    protected String sound;
 
-    public Animal(String name, String sound) {
+    public Animal(String name) {
         this.name = name;
-        this.sound = sound;
+        this.sound = "";
     }
 
-    public void makeSound(){
-        System.out.printf("%s, said: %s", name, sound);
+    public void showInfo(){
+        System.out.printf("Name: %s, sound: %s\n", name, sound);
     }
 }
