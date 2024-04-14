@@ -32,17 +32,13 @@ public class Program {
         //Invoking base methods
         for (Animal animal : animals){
 
-            for (Method method : animalMethods){
-                method.invoke(animal);
-            }
+            for (Method method : animalMethods) method.invoke(animal);
 
             Method[] childClassMethods = animal.getClass().getDeclaredMethods();
 
             //Checking if childClass contains makeSound method
             for (Method method : childClassMethods){
-                if (method.getName().equals("makeSound")){
-                    method.invoke(animal);
-                }
+                if (method.getName().equals("makeSound")) method.invoke(animal);
             }
         }
     }
